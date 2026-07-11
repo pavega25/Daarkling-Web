@@ -1,4 +1,18 @@
+---
+import { literal } from "astro:schema";
 
+const pageTitle = "Sobre mi";
+const identity = {
+    firstName: "Pablo",
+    country: "España",
+    occupation: "Programador Web Jr",
+    hobbies: ["Música", "VideoJuegos", "Ilustración", "Aprendizaje"],
+};
+const skills = ["HTML", "CSS", "Javascript", "Astro", "Bootstrap"]
+const happy = true;
+const finished = false;
+const goal = 3;
+---
 
 <html lang="es">
 	<head>
@@ -7,13 +21,29 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
 		<a href="/about/">About Me</a>
 		<a href="/blog/">Blog</a>
-		<h1>About</h1>
+		<h1>{pageTitle}</h1>
         <h2>Mi nuevo sitio con astro</h2>
+        <p>Aquí algunos datos sobre mí:</p>
+        <ul>
+            <li>Me llamo {identity.firstName}.</li>
+            <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Dos de mis aficiones son: {identity.hobbies[0]} e {identity.hobbies[2]}</li>}
+        </ul>
+        <p>Mis habilidades son:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+        {finished && <p>¡He terminado este tutorial!</p>}
+
+        {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 	</body>
 </html>
