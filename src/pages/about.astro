@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/navigation.astro';
+import Footer from '../components/Footer.astro';
 import { literal } from "astro:schema";
 
 const pageTitle = "Sobre mi";
@@ -44,5 +45,6 @@ const goal = 3;
         {finished && <p>¡He terminado este tutorial!</p>}
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+        <Footer/>
 	</body>
 </html>
