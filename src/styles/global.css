@@ -108,6 +108,13 @@ body {
     width: 70%;
     height: 400px;
   }
+  /* Preguntas frecuentes */
+  .pqr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .nav-links {
     display: flex;
     justify-content: flex-end;
