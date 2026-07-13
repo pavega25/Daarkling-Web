@@ -1,10 +1,20 @@
 ---
-import Navigation from './navigation.astro'
-import Menu from './Menu.astro'
+import Navigation from './navigation.astro';
 ---
 <header>
   <nav>
-    <Menu/>
-    <Navigation />
+    <div>
+      <h2>Daarkling</h2>
+    </div>
+    <div>
+      <button aria-expanded="false" aria-controls="main-menu" class="menu">
+        Menu
+      </button>
+    </div>
+    <div id="main-menu" class="nav-links">
+        <a href="/">Inicio</a>
+        <a href="/about/">Sobre mi</a>
+        <a href="/blog/">Blog</a>
+    </div>
   </nav>
 </header>

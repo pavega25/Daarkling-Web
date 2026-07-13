@@ -1,49 +1,46 @@
-html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+@font-face {
+  font-family: 'Elms Sans';
+  src: url('src\assets\fonts\ElmsSans-VariableFont_wght.woff2');
 }
 
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+html {
+  background-color: #01070e;
+  font-family: 'Elms Sans';
+  color: white;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
+body {
+  width: 100%;
+  padding: 1em;
 }
+
 
 /* estilos de la barra de navegación*/
 .menu {
-  background-color: #0d0950;
   border: none;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
-  padding: 5px 10px;
 }
 .nav-links {
   width: 100%;
   display: none;
-  margin: 0;
 }
 
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: white;
 }
 
 .nav-links a:hover,
@@ -55,19 +52,80 @@ h1 {
   display: unset;
 }
 @media screen and (min-width: 636px) {
+  .hero {
+    height: 95dvh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .hero div {
+    flex: 1;
+  }
+  h1 {
+    margin: 0;
+    font-size: 4em;
+    font-weight: 700;
+  }
+  .hero-intro {
+    font-weight: 400;
+  }
+  .hero-description {
+    max-width: 400px;
+  }
+  .hero-img {
+    width: 100%;
+  }
+  /* Galeria de imagenes */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 80px auto;
+  }
+  .img-gallery {
+    height: 70dvh;
+  }
+  .col-gallery {
+    display: flex;
+    gap: 20px;
+  }
+  /* Acerca de mi */
+  .about-me {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .desc-about {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  .img-about {
+    object-fit: cover;
+    width: 70%;
+    height: 400px;
+  }
   .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
   }
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
   }
   .menu {
     display: none;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    line-height: 1em;
+    height: 30px;
   }
 }

@@ -2,8 +2,6 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-
-const pageTitle = "Página de inicio";
 ---
 
 <html lang="es">
@@ -13,15 +11,50 @@ const pageTitle = "Página de inicio";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>Daarkling Tattoo</title>
 	</head>
 	<body>
 		<Header/>
-		<h1>{pageTitle}</h1>
+		<section class="hero">
+			<div class="hero-img-cont">
+				<img class="hero-img" src="/src/assets/images/DSC_0240 (1).webp" alt="">
+			</div>
+			<div class="hero-text">
+				<div>
+					<span class="hero-intro">Blackwork</span>
+					<h1>Daarkling Tattoo</h1>
+					<p class="hero-description">Descripción corta sobre el o los trabajos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste exercitationem assumenda veritatis temporibus animi ipsum.</p>
+				</div>
+				<div>
+					<button class="btn-cta">Envíame un mensaje</button>
+				</div>
+			</div>
+		</section>
+		<section class="gallery">
+			<div class="col-gallery">
+				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/619752828_18188961514348783_1831692392942668622_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzgxMzUxMTkxMDgxMDAyNjA1OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Wt4VeJHGDewQ7kNvwHCa9__&_nc_oc=AdqVjIt56BQA2WgXJDFMMKMIsChLc4eYjfsUCNIyIRbAQmeBHoQ97Dsox3lv3wrabP4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQDwADZVnEOsE_JI-1ioeoHgRtxi_Pui7i7Weza0TcJaUg&oe=6A5A9B7E" alt="">
+				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/741236869_18601913224050317_7872764481703658235_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzkzNzQ2NTI4ODEyNTA1NzY1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzMzMC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=JZ764AwtGjsQ7kNvwFd6G6T&_nc_oc=AdqGGTZOCD9dMhxBw8JxoZXwFUlqTv_5Psp6CMt49j1Mapmxka2x9DMCMg3GEWvkHLA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQDNmfuNH8icEHRs1pJSR07NVyvSIJqqYDRo1zAAn_jJzA&oe=6A5A9EEF" alt="">
+				<img class="img-gallery" src="https://scontent-mad2-1.cdninstagram.com/v/t51.82787-15/639483811_18192290401348783_776629198981628635_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzgzNTM2MDMyNDkzNzk3MTAzOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=NODlD5Ac9DIQ7kNvwH4DwxD&_nc_oc=Ado19FI1n6dBF3clwRVgJJ5wGWWKVIB64UcNnK5x40uR9FCBrOxsf74LLT2-HgXcLQY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQAjWGmQWXaZm46539MqAyjOlERsGo_PvnTOsiT-jB3xjA&oe=6A5A7D35" alt="">
+			</div>
+			<div class="col-gallery">
+				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/744184634_18208188382348783_4312708874009661627_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzkzOTU3ODU1ODkyMDU4OTMyMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzAyNC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=vx4zhAJx3coQ7kNvwHfTeE0&_nc_oc=AdrTslq-Agygk7LDdNJh-u08y8lgrm_0CWLtWg0XPDXiWvTKv5uNP11hOTE744X6gqE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=q_9VYGNfuu-RvS4QpPyU5Q&_nc_ss=7a22e&oh=00_AQDS-9hrQ_0YuoUiZowdHGXdwFoLPJ_R3KLHXhpWuCUfGw&oe=6A5A9E7B" alt="">
+				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/723820425_18205432216348783_4466641600763978100_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzkyMDc2MDU0NTAwMTkwNTg1MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzI3Ny5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=YYrSdgV1eJMQ7kNvwHWLMOF&_nc_oc=Adr8bDh1Nf3PV7rl9txQpc7UZQ1w1tXMm9rmJCzBI2m03SNzbxptRFrlNKAebYvh9xk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQBwKxbz9i1sEnZsYTg1_yv-SE8JvPFGdt_qr7rldu0v_w&oe=6A5A8EF8" alt="">
+				<img class="img-gallery" src="https://scontent-mad2-1.cdninstagram.com/v/t51.82787-15/623096307_18190280170348783_3705073363330537175_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=MzgyMTQ3MTM2OTU4NjkyNDY4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=DnwgMrOhYN8Q7kNvwEDHj9j&_nc_oc=Ado6NyofEsH4aMvmSBqZ8tyOwv1aGVM-LLYUr0Pgi__0_FlswpeJcUGbqSpBs24y5lo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_gid=6zXIusVPgBE--eCekz9ZIg&_nc_ss=7a22e&oh=00_AQDkqMeoi08-y_1YQaUVlPlGucaCx2FFhXq9rcajfzf3_g&oe=6A5A80A0" alt="">
+			</div>
+		</section>
+		<section class="about-me">
+			<img class="img-about" src="/src/assets/images/DSC_0160.webp" alt="">
+			<p class="desc-about">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fuga quasi cupiditate totam maiores recusandae nemo architecto doloribus repudiandae, iusto asperiores provident ducimus tempora itaque ad maxime consectetur? Animi, totam?
+			</p>
+			<img class="img-about" src="/src/assets/images/DSC_0160.webp" alt="">
+			<p class="desc-about">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fuga quasi cupiditate totam maiores recusandae nemo architecto doloribus repudiandae, iusto asperiores provident ducimus tempora itaque ad maxime consectetur? Animi, totam?
+			</p>
+		</section>
 		<Footer/>
 		<script>
 			import "../scripts/menu.js";
 		</script>
-		
 	</body>
 </html>
