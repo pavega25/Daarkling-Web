@@ -120,9 +120,11 @@ body {
     display: flex;
   }
   .footer-left {
+    display: flex;
     flex: 1;
   }
   .footer-right {
+    display: flex;
     flex: 1;
   }
   .sub-footer {
