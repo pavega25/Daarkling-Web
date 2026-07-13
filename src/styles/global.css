@@ -115,6 +115,20 @@ body {
     justify-content: center;
     align-items: center;
   }
+  /* Footer */
+  footer {
+    display: flex;
+  }
+  .footer-left {
+    flex: 1;
+  }
+  .footer-right {
+    flex: 1;
+  }
+  .sub-footer {
+    display: flex;
+    flex-direction: column;
+  }
   .nav-links {
     display: flex;
     justify-content: flex-end;
