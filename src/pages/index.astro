@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import imageHero from '../assets/images/DSC_0240 (1).webp'
 ---
 
 <html lang="es">
@@ -17,7 +18,7 @@ import '../styles/global.css';
 		<Header/>
 		<section class="hero">
 			<div class="hero-img-cont">
-				<img class="hero-img" src="/src/assets/images/DSC_0240 (1).webp" alt="">
+				<Image src={imageHero} alt="Foto de Daarkling"/>
 			</div>
 			<div class="hero-text">
 				<div>
