@@ -117,7 +117,7 @@ body {
   }
   /* Footer */
   footer {
-    display: flex;
+    background-color: rgb(48, 48, 48);
   }
   .footer-left {
     display: flex;
