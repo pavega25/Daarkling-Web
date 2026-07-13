@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import imageHero from '../assets/images/DSC_0240 (1).webp'
+import imageAbout from '../assets/images/DSC_0160.webp'
 ---
 
 <html lang="es">
@@ -18,6 +19,7 @@ import imageHero from '../assets/images/DSC_0240 (1).webp'
 		<Header/>
 		<section class="hero">
 			<div class="hero-img-cont">
+				<!-- La manera correcta de cargar las imagenes es importandolas en el frontmatter y cargandolas en el src con corchetes {} y el nombre.src -->
 				<img class="hero-img" src={imageHero.src} alt="">
 			</div>
 			<div class="hero-text">
@@ -44,11 +46,11 @@ import imageHero from '../assets/images/DSC_0240 (1).webp'
 			</div>
 		</section>
 		<section class="about-me">
-			<img class="img-about" src="/src/assets/images/DSC_0160.webp" alt="">
+			<img class="img-about" src={imageAbout.src} alt="">
 			<p class="desc-about">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fuga quasi cupiditate totam maiores recusandae nemo architecto doloribus repudiandae, iusto asperiores provident ducimus tempora itaque ad maxime consectetur? Animi, totam?
 			</p>
-			<img class="img-about" src="/src/assets/images/DSC_0160.webp" alt="">
+			<img class="img-about" src={imageAbout.src} alt="">
 			<p class="desc-about">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fuga quasi cupiditate totam maiores recusandae nemo architecto doloribus repudiandae, iusto asperiores provident ducimus tempora itaque ad maxime consectetur? Animi, totam?
 			</p>
