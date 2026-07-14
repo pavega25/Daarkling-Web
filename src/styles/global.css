@@ -10,7 +10,7 @@
 }
 
 html {
-  background-color: #01070e;
+  background-color: black;
   font-family: 'Elms Sans';
   color: white;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 /* estilos de la barra de navegación*/
-nav {
+/* nav {
   height: 80px;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ nav {
 /* Nueva linea para el menú responsive de móviles */
 :has(.menu[aria-expanded="true"]) .nav-links {
   display: unset;
-}
+} */
 
 .hero {
   height: 87dvh;
@@ -104,7 +104,7 @@ img {
 
 button {
   padding: 10px;
-  margin: 20px;
+  margin: 10px 0;
 }
 
 .btn-cta {
@@ -166,6 +166,7 @@ button {
     flex-direction: row-reverse;
     text-align: start;
     align-items: center;
+    padding: 0 160px;
   }
 
   .hero div {
@@ -198,6 +199,9 @@ button {
   }
 
   /* Galeria de imagenes */
+  h2 {
+    font-size: 3em;
+  }
   .gallery {
     display: flex;
     flex-direction: column;
@@ -217,7 +221,23 @@ button {
     flex-direction: row;
     gap: 20px;
   }
-
+  .btn-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    font-size: 3em;
+    font-weight: 1em;
+    border: none;
+  }
+  .btn-gallery a {
+    text-decoration: none;
+    color: black;
+  }
   /* Acerca de mi */
   .about-me {
     margin: 100px auto;
@@ -272,15 +292,18 @@ button {
   /* Preguntas Frecuentes */
   .pqr {
     height: 90dvh;
+    width: 100%;
   }
 
   summary {
     padding: 10px;
-    width: 100%;
+    width: 1200px;
     background-color: white;
     color: black;
+    border-radius: px;
+    margin-bottom: 5px;
   }
-
+/* 
   .nav-links {
     display: flex;
     justify-content: flex-end;
@@ -303,5 +326,5 @@ button {
     line-height: 1em;
     height: 28px;
     padding: 20px 10px;
-  }
-}
+  } */
+} 
