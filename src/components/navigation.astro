@@ -137,14 +137,14 @@ code {
 }
 
 .nav-border {
-  border: solid 2px;
-  border-radius: 10px;
+  border: none;
+  border-radius: 0;
 }
 
 .nav-top {
   flex: 1;
   width: 100%;
-  background: var(--white);
+  background: white;
   color: var(--black);
   transform: translateX(-101%);
   display: flex;
@@ -161,10 +161,10 @@ code {
   width: 100%;
   background: linear-gradient(
     135deg,
-    #0ae448 0%,
-    #abff84 40%,
-    #6fdd8b 70%,
-    #0ae448 100%
+    #FFC5d3 0%,
+    #E18AAA 40%,
+    #FFC5d3 70%,
+    #E18AAA 100%
   );
   color: var(--black);
   display: flex;
@@ -172,8 +172,7 @@ code {
   justify-content: center;
   padding: 24px 28px;
   z-index: 2;
-  border-color: #065a1e;
-  min-height: 180px;
+  min-height: 420px;
 }
 
 .nav-middle-header {
@@ -193,60 +192,6 @@ code {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.nav-middle-badge {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-middle-badge svg {
-  width: 24px;
-  height: 24px;
-}
-
-.nav-middle-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.nav-middle-title {
-  font-weight: 600;
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-.nav-middle-desc {
-  font-size: 0.78rem;
-  opacity: 0.7;
-  line-height: 1.4;
-}
-
-.nav-middle-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-.nav-middle-actions a {
-  font-family: Fraktion Mono, monospace;
-  font-size: 0.7rem;
-  text-decoration: none;
-  color: var(--black);
-  padding: 6px 14px;
-  border-radius: 100px;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-}
-.nav-middle-actions a:first-child {
-  background: var(--black);
-  color: var(--lt);
-  border-color: var(--black);
 }
 
 .nav-bottom {
@@ -284,14 +229,6 @@ code {
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
-.nav-login {
-  margin-top: auto;
-  padding-top: 20px;
-  font-size: 0.82rem;
-  color: var(--s50);
-  font-family: Fraktion Mono, monospace;
-}
-
 .nav-socials {
   list-style: none;
   display: flex;
@@ -333,42 +270,28 @@ code {
   <!-- Top panel — white -->
   <div class="nav-top nav-border nav-panel" id="navTop">
     <ul class="nav-list">
-      <li class="nav-item"><a class="nav-link" href="#">Tools</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Showcase</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Learn GSAP</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Sobre mi</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
     </ul>
-    <div class="nav-login">Login / Create Account</div>
   </div>
 
   <!-- Middle panel — matcha green gradient -->
   <div class="nav-middle nav-border nav-panel" id="navMiddle">
-    <div class="nav-middle-header">What's New</div>
+    <div class="nav-middle-header">Novedades</div>
     <div class="nav-middle-card">
-      <div class="nav-middle-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-        </svg>
-      </div>
-      <div class="nav-middle-info">
-        <div class="nav-middle-title">GSAP 3.15 is here</div>
-        <div class="nav-middle-desc">New easeReverse &amp; more.</div>
-      </div>
-    </div>
-    <div class="nav-middle-actions">
-      <a href="#">Release Notes</a>
+      <!-- Aquí podría poner algunas imagenes -->
     </div>
   </div>
 
   <!-- Bottom panel — black -->
   <div class="nav-bottom nav-border nav-panel" id="navBottom">
     <ul class="nav-socials">
-      <li><a href="#">CodePen</a></li>
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">X</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Whatsapp</a></li>
+      <li><a href="#">E-mail</a></li>
+      <li><a href="#">Peace & Love</a></li>
     </ul>
     <div class="nav-asset">
       <img src="https://gsap.com/img/header-shapes.png" alt="" />
@@ -396,7 +319,6 @@ code {
         },
         0
     )
-
         .fromTo(
         ".nav-panel",
         { x: "101%", y: 0, rotation: 0 },
@@ -408,7 +330,6 @@ code {
         },
         0
         )
-
         .fromTo(
         ".nav-item",
         { opacity: 0, x: -20 },
@@ -421,7 +342,6 @@ code {
         },
         0.1
         )
-
         .fromTo(
         ".bar-top",
         {
@@ -450,19 +370,7 @@ code {
         },
         0.06
         )
-        .fromTo(
-        ".nav-login",
-        { opacity: 0, y: 8 },
-        {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power3.out",
-        },
-        0.4
-        );
     }
-
     function closeMenu() {
     tl.to(".bar", {
         stroke: "var(--white)",
