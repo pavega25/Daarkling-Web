@@ -361,6 +361,11 @@ summary {
     align-items: center;
     justify-content: center;
   }
+  .cont-right-pqr p {
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+  }
   summary {
     padding: 10px;
     max-width: 1000px;
@@ -371,11 +376,13 @@ summary {
   summary p {
     display: block;
     width: 80%;
-    max-width: 800px;
+    height: 100%;
+    max-width: 300px;
     padding-left: 40px;
   }
   .last-ul {
     padding-left: 40px;
+    max-width: 350px;
   }
   /* Footer */
   footer {
