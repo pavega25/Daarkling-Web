@@ -148,6 +148,30 @@ h2 {
   align-items: center;
   text-align: center;
 }
+.pqr h2 {
+  font-size: 3em;
+  text-align: center;
+  }
+.subtitle-pqr {
+  text-align: center;
+  font-size: 2.8em;
+  line-height: 1em;
+  margin-bottom: 20px;
+  }
+.cont-left-pqr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cont-right-pqr {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
 
 .desc-about {
   max-width: 300px;
@@ -158,7 +182,7 @@ h2 {
 .img-about {
   object-fit: cover;
   width: 100%;
-  height: 700px;
+  height: 280px;
 }
 .cute {
   color: #f5afc9;
@@ -168,11 +192,12 @@ h2 {
 
 .pqr {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  height: 70dvh;
+  height: 100%;
   width: 100%;
+  margin-bottom: 80px;
 }
 
 summary {
