@@ -381,5 +381,7 @@ summary {
   .img-gallery {
     height: 700px;
   }
-  
+  .hero {
+    height: 100%;
+  }  
 }
