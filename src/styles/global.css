@@ -300,6 +300,9 @@ summary {
     object-position: 0% 90%;
     margin: 40px 0;
   }
+  .img-about2 {
+    object-position: 0% 40%;
+  }
 
   /* Preguntas frecuentes */
   .pqr {
