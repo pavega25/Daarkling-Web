@@ -383,3 +383,12 @@ summary {
     height: 100%;
   }  
 }
+@media (max-height: 740px) {
+  .img-gallery {
+    height: 700px;
+  }
+  .hero {
+    height: 120dvh;
+    margin-bottom: 40px;
+  }  
+}
