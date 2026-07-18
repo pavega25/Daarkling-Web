@@ -6,6 +6,12 @@ import '../styles/global.css';
 import imageHero from '../assets/images/Foto-Hero (1).webp';
 import imageAbout from '../assets/images/DSC_0134 (1).webp';
 import imageAbout2 from '../assets/images/DSC_0173 (2).webp';
+import image1 from '../assets/images/gallery/IMG_0785_560x700 (1).webp';
+import image2 from '../assets/images/gallery/IMG_1709.webp';
+import image3 from '../assets/images/gallery/IMG_2453.webp';
+import image4 from '../assets/images/gallery/IMG_2454.webp';
+import image5 from '../assets/images/gallery/IMG_5463.webp';
+import image6 from '../assets/images/gallery/IMG_5886.webp';
 ---
 
 <html lang="es">
@@ -36,23 +42,29 @@ import imageAbout2 from '../assets/images/DSC_0173 (2).webp';
 			</div>
 		</section>
 		<section class="gallery">
-			<h2>Galería</h2>
+			<div class="encabezado-gallery">
+				<p class="sub-btn-subtitle">Algunos de mis</p>
+				<h2 class="sub-btn-title">TRABAJOS</h2>
+			</div>
+			 class="p-summary"
 			<div class="col-gallery">
-				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/619752828_18188961514348783_1831692392942668622_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzgxMzUxMTkxMDgxMDAyNjA1OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Wt4VeJHGDewQ7kNvwHCa9__&_nc_oc=AdqVjIt56BQA2WgXJDFMMKMIsChLc4eYjfsUCNIyIRbAQmeBHoQ97Dsox3lv3wrabP4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQDwADZVnEOsE_JI-1ioeoHgRtxi_Pui7i7Weza0TcJaUg&oe=6A5A9B7E" alt="">
-				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/741236869_18601913224050317_7872764481703658235_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzkzNzQ2NTI4ODEyNTA1NzY1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzMzMC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=JZ764AwtGjsQ7kNvwFd6G6T&_nc_oc=AdqGGTZOCD9dMhxBw8JxoZXwFUlqTv_5Psp6CMt49j1Mapmxka2x9DMCMg3GEWvkHLA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQDNmfuNH8icEHRs1pJSR07NVyvSIJqqYDRo1zAAn_jJzA&oe=6A5A9EEF" alt="">
-				<img class="img-gallery" src="https://scontent-mad2-1.cdninstagram.com/v/t51.82787-15/639483811_18192290401348783_776629198981628635_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzgzNTM2MDMyNDkzNzk3MTAzOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=NODlD5Ac9DIQ7kNvwH4DwxD&_nc_oc=Ado19FI1n6dBF3clwRVgJJ5wGWWKVIB64UcNnK5x40uR9FCBrOxsf74LLT2-HgXcLQY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQAjWGmQWXaZm46539MqAyjOlERsGo_PvnTOsiT-jB3xjA&oe=6A5A7D35" alt="">
+				<img class="img-gallery" src={image5.src} alt="">
+				<img class="img-gallery" src={image2.src} alt="">
+				<img class="img-gallery" src={image3.src} alt="">
 			</div>
 			<div class="col-gallery">
-				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/744184634_18208188382348783_4312708874009661627_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzkzOTU3ODU1ODkyMDU4OTMyMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzAyNC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=vx4zhAJx3coQ7kNvwHfTeE0&_nc_oc=AdrTslq-Agygk7LDdNJh-u08y8lgrm_0CWLtWg0XPDXiWvTKv5uNP11hOTE744X6gqE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=q_9VYGNfuu-RvS4QpPyU5Q&_nc_ss=7a22e&oh=00_AQDS-9hrQ_0YuoUiZowdHGXdwFoLPJ_R3KLHXhpWuCUfGw&oe=6A5A9E7B" alt="">
-				<img class="img-gallery" src="https://scontent-mad1-1.cdninstagram.com/v/t51.82787-15/723820425_18205432216348783_4466641600763978100_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzkyMDc2MDU0NTAwMTkwNTg1MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzI3Ny5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=YYrSdgV1eJMQ7kNvwHWLMOF&_nc_oc=Adr8bDh1Nf3PV7rl9txQpc7UZQ1w1tXMm9rmJCzBI2m03SNzbxptRFrlNKAebYvh9xk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_gid=6dopmdwUZhRxV3GBS0w5Rw&_nc_ss=7a22e&oh=00_AQBwKxbz9i1sEnZsYTg1_yv-SE8JvPFGdt_qr7rldu0v_w&oe=6A5A8EF8" alt="">
-				<img class="img-gallery" src="https://scontent-mad2-1.cdninstagram.com/v/t51.82787-15/623096307_18190280170348783_3705073363330537175_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=MzgyMTQ3MTM2OTU4NjkyNDY4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=DnwgMrOhYN8Q7kNvwEDHj9j&_nc_oc=Ado6NyofEsH4aMvmSBqZ8tyOwv1aGVM-LLYUr0Pgi__0_FlswpeJcUGbqSpBs24y5lo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_gid=6zXIusVPgBE--eCekz9ZIg&_nc_ss=7a22e&oh=00_AQDkqMeoi08-y_1YQaUVlPlGucaCx2FFhXq9rcajfzf3_g&oe=6A5A80A0" alt="">
+				<img class="img-gallery" src={image4.src} alt="">
+				<img class="img-gallery" src={image6.src} alt="">
+				<img class="img-gallery" src={image1.src} alt="">
 			</div>
 			<div class="cont-btn-gallery">
+				<p class="sub-btn-subtitle">Ver todos los</p>
+				<h2 class="sub-btn-title">TATTOOS</h2>
 				<button class="btn-gallery"><a  href="https://www.instagram.com/daarkling/" target="_blank">+</a></button>
 			</div>
 		</section>
 		<section class="about-me" id="about">
-			<h2>Sobre mi</h2>
+			<h2>SOBRE MI</h2>
 			<p class="desc-about">
 				<span>¡Hola! ♥</span> <br> Me llamo <strong>Margarita</strong>, soy una <strong>artista/tatuadora</strong> residente en <strong><i>Barcelona</i></strong>. 
 			</p>
@@ -76,10 +88,11 @@ import imageAbout2 from '../assets/images/DSC_0173 (2).webp';
 			</div>
 			<div class="cont-right-pqr">
 				<h2>Preguntas frecuentes</h2>
-				<details>
+				<div class="cont-all-pqr">
+					<details>
 					<summary>¿Cuanto cuesta un tattoo?</summary>
 					<div>
-						<p>El precio de un tatuaje varía según el tamaño, la complejidad del diseño, los detalles y la zona del cuerpo. <br>
+						<p class="p-summary">El precio de un tatuaje varía según el tamaño, la complejidad del diseño, los detalles y la zona del cuerpo. <br>
 						Tengo una tarifa mínima de 80€ que cubre los materiales estériles de un solo uso, sin importar lo pequeño que sea el tatuaje.
 						Para proyectos grandes (como mangas completas o espaldas), suelo trabajar con tarifa por sesión.
 					</p>
@@ -88,31 +101,31 @@ import imageAbout2 from '../assets/images/DSC_0173 (2).webp';
 				<details>
 					<summary>¿Cómo puedo reservar una cita?</summary>
 					<div>
-						<p>Para reservar tu cita debes escribirme un mensaje por Instagram con tu disponibilidad. Una vez acordado el dia y la hora se deberá abonar obligatoriamente una paga y señal para confirmar tu cita.</p>
+						<p class="p-summary">Para reservar tu cita debes escribirme un mensaje por Instagram con tu disponibilidad. Una vez acordado el dia y la hora se deberá abonar obligatoriamente una paga y señal para confirmar tu cita.</p>
 					</div>
 				</details>
 				<details>
 					<summary>¿Duele hacerse un tatuaje?</summary>
 					<div>
-						<p>Si, sin embargo varía dependiendo la zona, la tolerancia al dolor, la sensibilidad de cada persona y la preparación previa para realizar tu tattoo.</p>
+						<p class="p-summary">Si, sin embargo varía dependiendo la zona, la tolerancia al dolor, la sensibilidad de cada persona y la preparación previa para realizar tu tattoo.</p>
 					</div>
 				</details>
 				<details>
 					<summary>¿Puedo llevar mi propio diseño?</summary>
 					<div>
-						<p>Puedes enviar imagenes de referencia con tu idea, dibujos tuyos y crearé una pieza única para ti.</p>
+						<p class="p-summary">Puedes enviar imagenes de referencia con tu idea, dibujos tuyos y crearé una pieza única para ti.</p>
 					</div>
 				</details>
 				<details>
 					<summary>¿Haces tatuajes personalizados?</summary>
 					<div>
-						<p>Si, me especializo en hacer obras únicas y personalizadas. Envíame un mensaje con tu idea, imagenes y/o canciones que evoquen las vibras que quieres para tu próximo tattoo.</p>
+						<p class="p-summary">Si, me especializo en hacer obras únicas y personalizadas. Envíame un mensaje con tu idea, imagenes y/o canciones que evoquen las vibras que quieres para tu próximo tattoo.</p>
 					</div>
 				</details>
 				<details>
 					<summary>¿Cómo debo prepararme para el día de mi cita?</summary>
-					<div>
-						<p>Para que la sesión sea lo más cómoda posible, sigue estos sencillos consejos</p>
+					<div class="p-summary">
+						<p >Para que la sesión sea lo más cómoda posible, sigue estos sencillos consejos</p>
 					<ul class="last-ul">
 						<li>Duerme bien la noche anterior.</li>
 						<li>Come antes de venir (necesitas energía y mantener el azúcar estable).</li>
@@ -123,6 +136,7 @@ import imageAbout2 from '../assets/images/DSC_0173 (2).webp';
 					</ul>
 					</div>
 				</details>
+				</div>
 			</div>
 		</section>
 		<Footer/>
