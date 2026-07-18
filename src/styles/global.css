@@ -166,7 +166,7 @@ h2 {
   justify-content: center;
 }
 .cont-right-pqr {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,7 +203,8 @@ h2 {
 
 summary {
   padding: 10px;
-  width: 400px;
+  width: 80vw;
+  max-width: 400px;
   background-color: white;
   color: black;
   margin-bottom: 5px;
@@ -340,6 +341,7 @@ summary {
     width: 100%;
     padding: 0 40px;
     margin: 80px 0 ;
+    gap: 40px;
   }
   .pqr div {
     flex: 1;
@@ -369,7 +371,6 @@ summary {
   }
   summary {
     padding: 10px;
-    max-width: 1000px;
     background-color: white;
     color: black;
     margin-bottom: 5px;
@@ -415,6 +416,9 @@ summary {
   }
   .hero {
     padding: 0 80px;
+  }
+  .summary {
+    max-width: 200px;
   }
 }
 @media (max-width: 1300px) {
@@ -472,4 +476,21 @@ summary {
   .hero {
     height: 100%;
   }  
+}
+@media (max-width: 330px) {
+  h3 {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.2em!important; 
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  .pqr h2 {
+    font-size: 1.4em;
+  }
+  .subtitle-pqr {
+    font-size: 1.8em;
+  }
 }
