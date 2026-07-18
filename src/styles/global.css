@@ -461,6 +461,17 @@ summary {
   align-items: center;
   width: 100%;
 }
+.pqr p {
+  width: 80vw;
+  padding: 10px 0;
+}
+.last-ul {
+  width: 80vw;
+  padding-left: 40px;
+}
+.presub-pqr {
+  text-align: center;
+}
 }
 @media (max-width: 650px) {
   .img-gallery {
