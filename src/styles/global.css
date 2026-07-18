@@ -338,12 +338,12 @@ summary {
   .img-about {
     object-fit: cover;
     width: 70%;
-    height: 550px;
-    object-position: 0% 90%;
+    height: 450px;
+    object-position: 30% 90%;
     margin: 40px 0;
   }
   .img-about2 {
-    object-position: 0% 40%;
+    object-position: 30% 40%;
   }
 
   /* Preguntas frecuentes */
@@ -455,7 +455,6 @@ summary {
   .hero div {
     text-align: start;
   }
-  
 }
 @media (max-width: 1050px) {
   .img-gallery {
