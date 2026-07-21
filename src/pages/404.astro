@@ -68,6 +68,30 @@ import img404 from '../assets/images/404.png'
             }
             img {
                 height: 400px;
+                margin: 40px auto;
+            }
+            button:not(.menu-toggle) {
+                padding: 16px 20px;
+                margin: 10px 0;
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+                background: #E18AAA;
+                box-shadow: inset -1px -2px 10px 4px #f5cedc, inset -2px -4px 15px 15px #aa476b;
+                transition: all 0.2s ease-in;
+                }
+                button:hover:not(.menu-toggle) {
+                background: #E18AAA;
+                box-shadow: inset -1px -2px 10px 4px #f5cedc, inset -2px -4px 15px 10px #aa476b, 0 0 10px white;
+                transform: scale(1.05);
+                }
+
+                .btn-cta {
+                text-decoration: none;
+                font-family: 'Elms Sans';
+                font-size: 1.2em;
+                font-weight: 700;
+                color: white;
             }
             @media (max-width: 800px) {
                 img {
@@ -78,12 +102,13 @@ import img404 from '../assets/images/404.png'
     </head>
     <body>
         <main>
-            <h1>No encontramos esta página</h1>
+            <Header2/>
             <p>ERROR</p>
+            <h1>No encontramos esta página</h1>
             <img src={img404.src} alt="Error 404, página no encontrada">
             <div>
                 <h2>Volver a la página principal</h2>
-                <a href="/">Haz clic aquí</a>
+                <button><a href="/">Haz clic aquí</a></button>
             </div>
         </main>
     </body>
