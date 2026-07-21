@@ -1,0 +1,75 @@
+---
+const title = "Daarkling Tattoo | Tatuadora Blackwork en Barcelona";
+const description = "Tattoo Barcelona, desde tatuajes pequeños a piezas grandes. Soy Daarkling Tattoo, hago tatuajes personalizados y diseños únicos para las mentes más atrevidas. Blackwork, Fineline, Botanical, Neotribal, Tribal, Dark Ornamental";
+const image = "/images/og-daarkling-tattoo.jpg"; // Pendiente de crear la imagen 1200x630
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" />
+
+        <!-- Enlace Canónico (Evita contenido duplicado) -->
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- SEO Básico Localizado -->
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="keywords" content="tatuadora blackwork barcelona, tatuajes blackwork españa, daarkling tattoo, estudio tatuajes barcelona, blackwork tattoo artist" />
+
+        <!-- Open Graph / Facebook / WhatsApp / Instagram -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, Astro.url)} />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:site_name" content="Daarkling Tattoo" />
+
+        <!-- Twitter / X -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={Astro.url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+        <style>
+            @font-face {
+            font-family: 'Elms Sans';
+            src: url('../assets/fonts/ElmsSans-VariableFont_wght.woff2');
+            }
+
+            * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            }
+
+            html {
+            background-color: black;
+            font-family: 'Elms Sans';
+            color: white;
+            width: 100%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>No encontramos esta página</h1>
+            <p>ERROR</p>
+            <img src="" alt="">
+            <div>
+                <h2>Volver a la página principal</h2>
+                <a href="/src/pages/index.astro">Haz clic aquí</a>
+            </div>
+        </main>
+    </body>
+</html>
