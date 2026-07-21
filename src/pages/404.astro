@@ -3,6 +3,7 @@ const title = "Daarkling Tattoo | Tatuadora Blackwork en Barcelona";
 const description = "Tattoo Barcelona, desde tatuajes pequeños a piezas grandes. Soy Daarkling Tattoo, hago tatuajes personalizados y diseños únicos para las mentes más atrevidas. Blackwork, Fineline, Botanical, Neotribal, Tribal, Dark Ornamental";
 const image = "/images/og-daarkling-tattoo.jpg"; // Pendiente de crear la imagen 1200x630
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+import img404 from '../assets/images/404.png'
 ---
 
 <html lang="es">
@@ -59,6 +60,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             }
             main {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
@@ -70,10 +72,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <main>
             <h1>No encontramos esta página</h1>
             <p>ERROR</p>
-            <img src="#" alt="">
+            <img src={img404.src} alt="Error 404, página no encontrada">
             <div>
                 <h2>Volver a la página principal</h2>
-                <a href="#">Haz clic aquí</a>
+                <a href="/">Haz clic aquí</a>
             </div>
         </main>
     </body>
