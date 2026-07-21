@@ -1,31 +1,494 @@
 ---
-import Social from './Social.astro';
+import Social from "./Social.astro";
 ---
 
-<footer>
-  <div class="footer-left">
-    <div>
-      <h3>Daarkling Tattoo</h3>
-      <p>Estudio privado en Clot, Barcelona</p>
-    </div>
-    <div>
-      <h3>Navegar</h3>
+<style>
+  footer.footer {
+    position: relative;
+    background-color: #0d0d0d; /* Reemplaza por el color exacto de tu fondo de footer */
+    color: #ffffff;
+    padding-top: 2rem;
+  }
+
+  /* Posicionamiento del SVG de rebote */
+  .footer-bounce-svg {
+    position: absolute;
+    top: -80px; /* Ajusta la altura del saliente según el diseño */
+    left: 0;
+    width: 100%;
+    height: 80px;
+    pointer-events: none; /* Para evitar interferir con clics */
+    overflow: visible;
+  }
+
+  /* El relleno del vector debe coincidir con el background del footer */
+  #bouncy-path {
+    fill: #0d0d0d; /* Mismo color de fondo del footer */
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+  /* Estilos para los botones del footer */
+  .legal-link {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    text-underline-offset: 4px;
+    text-align: left;
+  }
+
+  /* Modal Overlay (Fondo negro) */
+  .legal-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+  }
+
+  .legal-modal-overlay.open {
+    pointer-events: auto;
+  }
+
+  /* Contenedor principal de la Modal */
+  .legal-modal-container {
+    background-color: #000000;
+    border: 1px solid #333333;
+    border-radius: 0 !important; /* Estricto: sin bordes redondeados */
+    width: 100%;
+    max-width: 750px;
+    max-height: 85vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Botón de cierre */
+  .legal-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 200;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+    border-radius: 0 !important;
+    transition: opacity 0.2s;
+  }
+
+  .legal-modal-close:hover {
+    opacity: 0.6;
+  }
+
+  /* Cuerpo con scroll personalizado */
+  .legal-modal-body {
+    padding: 3rem 2.5rem;
+    overflow-y: auto;
+    color: #ffffff;
+    font-family: "Elms Sans", sans-serif;
+  }
+
+  /* Scrollbar estilizada recta */
+  .legal-modal-body::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .legal-modal-body::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  .legal-modal-body::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 0 !important;
+  }
+
+  /* Artículos dentro de la modal */
+  .legal-content {
+    display: none;
+  }
+
+  .legal-content.active {
+    display: block;
+  }
+
+  /* Jerarquía Tipográfica con 'Elms Sans' (Pesos variables de 100 a 900) */
+  .legal-title {
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 900; /* Peso máximo para títulos principales */
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+  }
+
+  .legal-subtitle {
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 200; /* Peso ligero para subtítulos */
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 0.75rem;
+  }
+
+  .legal-section-title {
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 700; /* Peso marcado para secciones */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+
+  .legal-text {
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 300; /* Peso regular fino para texto base */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d1d1d1;
+    margin-bottom: 1rem;
+  }
+
+  .legal-text strong {
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .legal-footer-note {
+    font-family: "Elms Sans", sans-serif;
+    font-weight: 100; /* Peso extra fino para notas al pie */
+    font-size: 0.75rem;
+    color: #666666;
+    margin-top: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+<footer class="footer">
+  <!-- SVG para la animación de rebote -->
+  <svg
+    class="footer-bounce-svg"
+    viewBox="0 0 2278 156"
+    preserveAspectRatio="none"
+  >
+    <path
+      id="bouncy-path"
+      d="M0-0.3C0-0.3,464,0,1139,0s1139-0.3,1139-0.3V156H0V-0.3z"></path>
+  </svg>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <div>
+        <h3>Daarkling Tattoo</h3>
+        <p>Estudio privado en Clot, Barcelona</p>
+      </div>
+      <div>
+        <h3>Navegar</h3>
+        <div class="sub-footer">
+          <a href="#">Inicio</a>
+          <a href="#about">Sobre mi</a>
+          <a href="https://daarkling.vercel.app/tienda">Tienda</a>
+        </div>
+      </div>
       <div class="sub-footer">
-        <a href="#">Inicio</a>
-        <a href="#about">Sobre mi</a>
-        <a href="https://daarkling.vercel.app/tienda">Tienda</a>
+        <h3>Redes</h3>
+        <a href="https://www.instagram.com/daarkling/" target="_blank"
+          >Instagram</a
+        >
+        <a href="https://wa.me/+34601154282" target="_blank">Whatsapp</a>
+      </div>
+      <div class="sub-footer">
+        <h3>Documentación Legal</h3>
+        <button class="legal-link" data-modal-target="aviso">Aviso Legal</button
+        >
+        <button class="legal-link" data-modal-target="privacidad"
+          >Política de Privacidad</button
+        >
+        <button class="legal-link" data-modal-target="cookies"
+          >Política de Cookies</button
+        >
       </div>
     </div>
-    <div class="sub-footer">
-      <h3>Redes</h3>
-      <a href="https://www.instagram.com/daarkling/" target="_blank">Instagram</a>
-      <a href="https://wa.me/+34601154282" target="_blank">Whatsapp</a>
-    </div>
-    <div class="sub-footer">
-      <h3>Documentación Legal</h3>
-      <a href="#" target="_blank">Avíso Legal</a>
-      <a href="#" target="_blank">Política de privacidad</a>
-      <a href="#" target="_blank">Política de Cookies</a>
+  </div>
+  <!-- Ventana Modal Legal -->
+  <div class="legal-modal-overlay" id="legalModal" aria-hidden="true">
+    <div class="legal-modal-container">
+      <button
+        class="legal-modal-close"
+        id="closeLegalModal"
+        aria-label="Cerrar modal">&times;</button
+      >
+
+      <div class="legal-modal-body">
+        <!-- AVISO LEGAL -->
+        <article class="legal-content" id="content-aviso">
+          <h2 class="legal-title">AVISO LEGAL</h2>
+          <p class="legal-subtitle">INFORMACIÓN GENERAL Y CONDICIONES DE USO</p>
+
+          <p class="legal-text">
+            En cumplimiento con el deber de información recogido en el artículo
+            10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de
+            la Información y del Comercio Electrónico (LSSI-CE), se facilitan a
+            continuación los siguientes datos:
+          </p>
+
+          <h3 class="legal-section-title">1. DATOS IDENTIFICATIVOS</h3>
+          <p class="legal-text">
+            El titular de este sitio web es el proyecto artístico <strong
+              >Daarkling Tattoo</strong
+            >, con centro de actividad y estudio privado ubicado en Clot,
+            Barcelona (España). Correo electrónico de contacto: <strong
+              >daarklingtattoo@gmail.com</strong
+            >.
+          </p>
+
+          <h3 class="legal-section-title">
+            2. PROPIEDAD INTELECTUAL E INDUSTRIAL
+          </h3>
+          <p class="legal-text">
+            Todos los derechos de propiedad intelectual e industrial de los
+            contenidos de este sitio web (incluyendo, a título enunciativo,
+            diseños, fotografías de tatuajes, ilustraciones digitales, logos y
+            código fuente) son titularidad exclusiva del autor. Queda prohibida
+            la reproducción, distribución o modificación pública sin
+            autorización explícita previa.
+          </p>
+
+          <h3 class="legal-section-title">3. EXCLUSIÓN DE RESPONSABILIDAD</h3>
+          <p class="legal-text">
+            Este sitio web tiene carácter puramente informativo y de portfolio
+            personal. El titular no se hace responsable de las decisiones
+            tomadas a partir de la información suministrada en la web ni de los
+            daños ocasionados por fallos técnicos o enlaces a plataformas
+            externas de terceros (como Instagram o WhatsApp).
+          </p>
+
+          <p class="legal-footer-note">
+            Última actualización conforme a las normativas de la Unión Europea.
+          </p>
+        </article>
+
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <article class="legal-content" id="content-privacidad">
+          <h2 class="legal-title">POLÍTICA DE PRIVACIDAD</h2>
+          <p class="legal-subtitle">
+            PROTECCIÓN DE DATOS PERSONALES (RGPD / LOPDGDD)
+          </p>
+
+          <p class="legal-text">
+            De conformidad con el Reglamento (UE) 2016/679 del Parlamento
+            Europeo y del Consejo (RGPD), le informamos sobre el tratamiento de
+            sus datos al navegar por esta web:
+          </p>
+
+          <h3 class="legal-section-title">1. RESPONSABLE DEL TRATAMIENTO</h3>
+          <p class="legal-text">
+            <strong>Daarkling Tattoo</strong> — Barcelona, España. Email: <em
+              >daarklingtattoo@gmail.com</em
+            >.
+          </p>
+
+          <h3 class="legal-section-title">
+            2. RECOGIDA Y TRATAMIENTO DE DATOS
+          </h3>
+          <p class="legal-text">
+            Este sitio web es <strong>100% estático</strong> y no dispone de formularios
+            de contacto, registro de usuarios, bases de datos ni pasarelas de pago
+            integradas. No recopilamos de forma automatizada ningún tipo de dato personal.
+          </p>
+          <p class="legal-text">
+            Cualquier contacto iniciado voluntariamente por el usuario a través
+            de plataformas externas (Instagram o WhatsApp) será tratado
+            exclusivamente para la gestión de citas y consultas puntuales, sin
+            incorporación a ficheros automatizados ni cesión a terceros.
+          </p>
+
+          <h3 class="legal-section-title">3. DERECHOS DEL USUARIO</h3>
+          <p class="legal-text">
+            Puede ejercitar sus derechos de acceso, rectificación, supresión y
+            limitación del tratamiento enviando un correo a <strong
+              >daarklingtattoo@gmail.com</strong
+            >.
+          </p>
+
+          <p class="legal-footer-note">
+            Cumplimiento estricto de la normativa europea de protección de
+            datos.
+          </p>
+        </article>
+
+        <!-- POLÍTICA DE COOKIES -->
+        <article class="legal-content" id="content-cookies">
+          <h2 class="legal-title">POLÍTICA DE COOKIES</h2>
+          <p class="legal-subtitle">USO DE TECNOLOGÍAS Y ALMACENAMIENTO</p>
+
+          <p class="legal-text">
+            En cumplimiento con el artículo 22.2 de la LSSI-CE y las directivas
+            de la Unión Europea:
+          </p>
+
+          <h3 class="legal-section-title">
+            1. DECLARACIÓN DE AUSENCIA DE COOKIES
+          </h3>
+          <p class="legal-text">
+            Este sitio web no utiliza cookies propias ni de terceros destinadas
+            al rastreo de usuarios, analítica web (como Google Analytics) o
+            publicidad comportamental. No se almacenan direcciones IP ni datos
+            de navegación.
+          </p>
+
+          <h3 class="legal-section-title">2. ENLACES EXTERNOS</h3>
+          <p class="legal-text">
+            Al hacer clic en enlaces a servicios externos (Instagram, WhatsApp),
+            accederá a plataformas que gestionan sus propias políticas de
+            cookies y privacidad ajenas a este sitio web.
+          </p>
+
+          <p class="legal-footer-note">
+            Sitio web libre de rastreadores y cookies publicitarias.
+          </p>
+        </article>
+      </div>
     </div>
   </div>
 </footer>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { MorphSVGPlugin } from "gsap/MorphSVGPlugin"; // Requiere Club GSAP
+
+  gsap.registerPlugin(ScrollTrigger, MorphSVGPlugin);
+
+  function initFooterBounce() {
+    // Formas del vector (Vector curvado hacia abajo vs Vector plano)
+    const down = "M0-0.3C0-0.3,464,156,1139,156S2278-0.3,2278-0.3V156H0V-0.3z";
+    const center = "M0-0.3C0-0.3,464,0,1139,0s1139-0.3,1139-0.3V156H0V-0.3z";
+
+    ScrollTrigger.create({
+      trigger: ".footer",
+      start: "top bottom", // Inicia cuando la parte superior del footer entra por abajo de la pantalla
+      onEnter: (self) => {
+        // Obtenemos la velocidad del scroll del usuario
+        const velocity = self.getVelocity();
+
+        // Limitamos la variación para evitar deformaciones extremas e irrealistas
+        const rawVariation = velocity / 12000;
+        const variation = Math.min(Math.max(rawVariation, 0), 0.8);
+
+        // Animar el trazo SVG con elasticidad ajustada dinámicamente
+        gsap.fromTo(
+          "#bouncy-path",
+          { morphSVG: down },
+          {
+            duration: 1.8,
+            morphSVG: center,
+            ease: `elastic.out(${1 + variation}, ${0.4 - variation * 0.2})`,
+            overwrite: "auto",
+          },
+        );
+      },
+    });
+  }
+
+  // Eventos de Astro
+  document.addEventListener("DOMContentLoaded", initFooterBounce);
+  document.addEventListener("astro:page-load", initFooterBounce);
+</script>
+
+<script>
+  import { gsap } from "gsap";
+
+  function initLegalModal() {
+    const overlay = document.getElementById("legalModal");
+    const container = overlay?.querySelector(".legal-modal-container");
+    const closeBtn = document.getElementById("closeLegalModal");
+    const triggers = document.querySelectorAll("[data-modal-target]");
+    const articles = document.querySelectorAll(".legal-content");
+
+    if (!overlay || !container || !closeBtn) return;
+
+    // Abrir Modal
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const targetId = trigger.getAttribute("data-modal-target");
+
+        // Ocultar todas las secciones y mostrar solo la seleccionada
+        articles.forEach((art) => art.classList.remove("active"));
+        const targetArticle = document.getElementById(`content-${targetId}`);
+        if (targetArticle) targetArticle.classList.add("active");
+
+        // Bloquear scroll de la página
+        document.body.style.overflow = "hidden";
+        overlay.classList.add("open");
+
+        // Animación GSAP de entrada
+        gsap.killTweensOf([overlay, container]);
+        gsap.to(overlay, { opacity: 1, duration: 0.3, ease: "power2.out" });
+        gsap.fromTo(
+          container,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.4, ease: "power3.out", delay: 0.1 },
+        );
+      });
+    });
+
+    // Cerrar Modal
+    function closeModal() {
+      gsap.to(container, {
+        y: 20,
+        opacity: 0,
+        duration: 0.25,
+        ease: "power2.in",
+      });
+      gsap.to(overlay, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          overlay.classList.remove("open");
+          document.body.style.overflow = "";
+        },
+      });
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    // Cerrar al hacer clic fuera del contenido o presionar ESC
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("open")) {
+        closeModal();
+      }
+    });
+  }
+
+  // Compatibilidad con Astro
+  document.addEventListener("DOMContentLoaded", initLegalModal);
+  document.addEventListener("astro:page-load", initLegalModal);
+</script>

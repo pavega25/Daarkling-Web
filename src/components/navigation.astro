@@ -38,11 +38,14 @@ import novedades2 from '../assets/images/Novedades 2 (1).webp';
 
 .topbar {
   z-index: 400;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 60px;
+  width: 100%;
   padding: 10px;
 }
 h1 {
@@ -314,6 +317,52 @@ code {
     </ul>
   </div>
 </nav>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initHeaderScroll() {
+    const topbar = document.querySelector(".topbar");
+    const menuToggle = document.getElementById("menuToggle");
+
+    if (!topbar) return;
+
+    // 1. Creamos la animación de subir la barra (-100% de su altura)
+    // .progress(1) hace que empiece al final de la animación (es decir, visible en pantalla)
+    const showAnim = gsap.from(topbar, { 
+      yPercent: -100,
+      paused: true,
+      duration: 0.3,
+      ease: "power2.out"
+    }).progress(1);
+
+    // 2. Escuchamos el scroll con ScrollTrigger
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        // Si el menú desplegable está abierto, no ocultamos la barra
+        const isMenuOpen = menuToggle?.getAttribute("aria-expanded") === "true";
+        if (isMenuOpen) return;
+
+        // self.direction === -1 -> Scroll hacia ARRIBA (play = mostrar)
+        // self.direction === 1  -> Scroll hacia ABAJO (reverse = ocultar)
+        if (self.direction === -1) {
+          showAnim.play();
+        } else {
+          showAnim.reverse();
+        }
+      }
+    });
+  }
+
+  // Compatibilidad con carga estándar y View Transitions de Astro
+  document.addEventListener("DOMContentLoaded", initHeaderScroll);
+  document.addEventListener("astro:page-load", initHeaderScroll);
+</script>
 
 <script>
     import { gsap } from "gsap";

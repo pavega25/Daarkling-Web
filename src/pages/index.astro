@@ -69,19 +69,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				<h2 class="sub-btn-title">TRABAJOS</h2>
 			</div>
 			<div class="col-gallery">
-				<img class="img-gallery" src={image5.src} alt="Tatuaje de brazo completo hombre con dientes y ojos" loading="lazy">
-				<img class="img-gallery" src={image2.src} alt="Tatuaje neotribal mujer" loading="lazy">
-				<img class="img-gallery" src={image1.src} alt="Tatuaje de una chica con la cara partida a la mitad con dientes" loading="lazy">
+				<img class="img-gallery reveal" src={image5.src} alt="Tatuaje de brazo completo hombre con dientes y ojos" loading="lazy">
+				<img class="img-gallery reveal" src={image2.src} alt="Tatuaje neotribal mujer" loading="lazy">
+				<img class="img-gallery reveal" src={image1.src} alt="Tatuaje de una chica con la cara partida a la mitad con dientes" loading="lazy">
 			</div>
 			<div class="col-gallery">
-				<img class="img-gallery" src={image4.src} alt="Tatuaje del antebrazo hombre pinchos sobre negro" loading="lazy">
-				<img class="img-gallery" src={image6.src} alt="Tatuaje pierna hombre, cara mujer esoterico" loading="lazy">
-				<img class="img-gallery" src={image3.src} alt="Tatuaje chica demonio sobre neotribal" loading="lazy">
+				<img class="img-gallery reveal" src={image4.src} alt="Tatuaje del antebrazo hombre pinchos sobre negro" loading="lazy">
+				<img class="img-gallery reveal" src={image6.src} alt="Tatuaje pierna hombre, cara mujer esoterico" loading="lazy">
+				<img class="img-gallery reveal" src={image3.src} alt="Tatuaje chica demonio sobre neotribal" loading="lazy">
 			</div>
 			<div class="cont-btn-gallery">
 				<p class="sub-btn-subtitle">Ver todos los</p>
 				<h2 class="sub-btn-title">TATTOOS</h2>
-				<button class="btn-gallery"><a  href="https://www.instagram.com/daarkling/" target="_blank">+</a></button>
+				<button class="btn-gallery reveal"><a  href="https://www.instagram.com/daarkling/" target="_blank">+</a></button>
 			</div>
 		</section>
 		<section class="about-me" id="about">
@@ -89,14 +89,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			<p class="desc-about">
 				<span>¡Hola! ♥</span> <br> Me llamo <strong>Margarita</strong>, soy una <strong>artista/tatuadora</strong> residente en <strong><i>Barcelona</i></strong>. 
 			</p>
-			<img class="img-about" src={imageAbout.src} alt="Fotografía de Daarkling trabajando sobre una mesa" loading="lazy">
+			<img class="img-about reveal" src={imageAbout.src} alt="Fotografía de Daarkling trabajando sobre una mesa" loading="lazy">
 			<p class="desc-about">
 				<i>Desde pequeña siempre me ha encantado <strong>dibujar</strong> y me ha fascinado el <strong>arte</strong>.</i>
 			</p>
 			<p class="desc-about">	
 				 Definiría mi <strong>estilo</strong> como una <i>mezcla</i> de lo <strong>oscuro</strong> y <strong>tenebroso</strong> con lo “<strong class="cute">cute</strong>”.
 			</p>
-			<img class="img-about img-about2" src={imageAbout2.src} alt="Fotografía de Ilustraciones en proceso" loading="lazy">
+			<img class="img-about img-about2 reveal" src={imageAbout2.src} alt="Fotografía de Ilustraciones en proceso" loading="lazy">
 			<p class="desc-about">
 				Realizo <strong>tatuajes únicos</strong> y con <i>personalidad</i> para las mentes más <strong>atrevidas</strong>. Actualmente atiendo en mi <i>estudio privado</i> en el barrio del <strong>Clot</strong>. 
 			</p>
@@ -105,7 +105,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			<div class="cont-left-pqr">
 				<p class="presub-pqr">Escríbeme ahora y</p>
 				<h3 class="subtitle-pqr">Hagamos tu idea realidad</h3>
-				<button><a class="btn-cta" href="">¡Si quiero!</a></button>
+				<button><a class="btn-cta" href="https://ig.me/m/daarkling" target="_blank">¡Si quiero!</a></button>
 			</div>
 			<div class="cont-right-pqr">
 				<h2>PREGUNTAS FRECUENTES</h2>
@@ -164,5 +164,125 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<script>
 			import "../scripts/menu.js";
 		</script>
+		<script>
+			import { gsap } from "gsap";
+			import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			function setupGalleryAnimations() {
+				// Revelado por lotes (batch) de las imágenes
+				ScrollTrigger.batch(".reveal", {
+				start: "top 80%", // La animación inicia cuando la imagen toca el 85% inferior de la pantalla
+				onEnter: (batch) => {
+					gsap.to(batch, {
+					autoAlpha: 1,
+					y: 0,
+					scale: 1,
+					stagger: 0.15, // Desfase entre cada imagen del lote
+					duration: 0.8,
+					ease: "power2.out",
+					overwrite: "auto",
+					});
+				},
+				// Si el usuario vuelve a subir la página, las imágenes se vuelven a ocultar
+				onLeaveBack: (batch) => {
+					gsap.to(batch, {
+					autoAlpha: 0,
+					y: 30,
+					scale: 0.95,
+					duration: 0.4,
+					overwrite: "auto",
+					});
+				},
+				});
+
+				// Recalcular posiciones si las imágenes tardan en cargar por el loading="lazy"
+				window.addEventListener("load", () => ScrollTrigger.refresh());
+			}
+
+			// Inicialización compatible con Astro View Transitions y carga estándar
+			document.addEventListener("DOMContentLoaded", setupGalleryAnimations);
+			document.addEventListener("astro:page-load", setupGalleryAnimations);
+		</script>
+		<script>
+			import { gsap } from "gsap";
+
+			function initAccordion() {
+				const detailsList = document.querySelectorAll<HTMLDetailsElement>(".cont-all-pqr details");
+
+				detailsList.forEach((detail) => {
+				const summary = detail.querySelector("summary");
+				const content = detail.querySelector("div");
+
+				if (!summary || !content) return;
+
+				summary.addEventListener("click", (e) => {
+					// Prevenimos el comportamiento instantáneo nativo del navegador
+					e.preventDefault();
+
+					const isOpen = detail.hasAttribute("open");
+
+					// 1. Cerramos todos los demás desplegables que estén abiertos
+					detailsList.forEach((otherDetail) => {
+					if (otherDetail !== detail && otherDetail.hasAttribute("open")) {
+						closeAccordion(otherDetail);
+					}
+					});
+
+					// 2. Abrimos o cerramos el elemento actual
+					if (isOpen) {
+					closeAccordion(detail);
+					} else {
+					openAccordion(detail);
+					}
+				});
+				});
+
+				// Función para abrir suavemente
+				function openAccordion(detail: HTMLDetailsElement) {
+				const content = detail.querySelector("div");
+				if (!content) return;
+
+				detail.setAttribute("open", "true");
+				gsap.killTweensOf(content); // Cancela animaciones pendientes si el usuario da clics rápidos
+
+				gsap.fromTo(
+					content,
+					{ height: 0, opacity: 0 },
+					{
+					height: "auto",
+					opacity: 1,
+					duration: 0.4,
+					ease: "power2.out",
+					}
+				);
+				}
+
+				// Función para cerrar suavemente
+				function closeAccordion(detail: HTMLDetailsElement) {
+				const content = detail.querySelector("div");
+				if (!content) return;
+
+				gsap.killTweensOf(content);
+
+				gsap.to(content, {
+					height: 0,
+					opacity: 0,
+					duration: 0.3,
+					ease: "power2.in",
+					onComplete: () => {
+					// Eliminamos el atributo 'open' cuando la animación termina
+					detail.removeAttribute("open");
+					gsap.set(content, { clearProps: "height,opacity" });
+					},
+				});
+				}
+			}
+
+			// Compatibilidad con Astro
+			document.addEventListener("DOMContentLoaded", initAccordion);
+			document.addEventListener("astro:page-load", initAccordion);
+	</script>
 	</body>
 </html>

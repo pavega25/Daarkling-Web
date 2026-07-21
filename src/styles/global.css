@@ -67,7 +67,7 @@ img {
   margin: 20px 0;
 }
 
-button:not(.menu-toggle) {
+button:not(.menu-toggle, .legal-link, .legal-modal-close) {
   padding: 16px 20px;
   margin: 10px 0;
   border-radius: 20px;
@@ -77,7 +77,7 @@ button:not(.menu-toggle) {
   box-shadow: inset -1px -2px 10px 4px #f5cedc, inset -2px -4px 15px 15px #aa476b;
   transition: all 0.2s ease-in;
 }
-button:hover:not(.menu-toggle) {
+button:hover:not(.menu-toggle, .legal-link, .legal-modal-close) {
   background: #E18AAA;
   box-shadow: inset -1px -2px 10px 4px #f5cedc, inset -2px -4px 15px 10px #aa476b, 0 0 10px white;
   transform: scale(1.05);
@@ -113,6 +113,10 @@ h2 {
   margin-top: 160px;
 }
 .img-gallery {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px) scale(0.95);
+  will-change: transform, opacity; /* Optimización de aceleración por hardware */
   height: 70dvh;
   width: 100%;
   object-fit: cover;
@@ -188,7 +192,9 @@ h2 {
   align-items: center;
   margin-bottom: 80px;
 }
-
+details {
+  cursor: pointer;
+}
 .desc-about {
   max-width: 300px;
   margin: 20px auto;
@@ -196,6 +202,10 @@ h2 {
 }
 
 .img-about {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px) scale(0.95);
+  will-change: transform, opacity; /* Optimización de aceleración por hardware */
   object-fit: cover;
   width: 100%;
   height: 280px;
@@ -213,7 +223,7 @@ h2 {
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: 160px;
 }
 
 summary {
