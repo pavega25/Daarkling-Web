@@ -9,6 +9,10 @@ import imgMeme from '../assets/images/meme.png';
         <meta name="generator" content={Astro.generator} />
         <title>Tienda | Daarkling</title>
         <style>
+            @font-face {
+                font-family: 'Elms Sans';
+                src: url('../assets/fonts/ElmsSans-VariableFont_wght.woff2');
+            }
             * {
                 box-sizing: border-box;
                 margin: 0;
@@ -17,6 +21,7 @@ import imgMeme from '../assets/images/meme.png';
             body {
                 background-color: black;
                 color: white;
+                font-family: 'Elms Sans';
             }
             main {
                 display: flex;
