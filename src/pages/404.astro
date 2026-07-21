@@ -4,7 +4,6 @@ const description = "Tattoo Barcelona, desde tatuajes pequeños a piezas grandes
 const image = "/images/og-daarkling-tattoo.jpg"; // Pendiente de crear la imagen 1200x630
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 import img404 from '../assets/images/404.png';
-import Header2 from '../components/Header2.astro';
 ---
 
 <html lang="es">
@@ -103,13 +102,12 @@ import Header2 from '../components/Header2.astro';
     </head>
     <body>
         <main>
-            <Header2/>
             <p>ERROR</p>
             <h1>No encontramos esta página</h1>
             <img src={img404.src} alt="Error 404, página no encontrada">
             <div>
                 <h2>Volver a la página principal</h2>
-                <button><a href="/">Haz clic aquí</a></button>
+                <button><a class="btn-cta" href="/">Haz clic aquí</a></button>
             </div>
         </main>
     </body>
