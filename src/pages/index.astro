@@ -51,7 +51,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<section class="hero">
 			<div class="hero-img-cont">
 				<!-- La manera correcta de cargar las imagenes es importandolas en el frontmatter y cargandolas en el src con corchetes {} y el nombre.src -->
-				<img class="hero-img" src={imageHero.src} alt="">
+				<img class="hero-img" src={imageHero.src} alt="Fotografía de daarkling ilustrando" fetchpriority="high">
 			</div>
 			<div class="hero-text">
 				<div>
@@ -70,14 +70,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				<h2 class="sub-btn-title">TRABAJOS</h2>
 			</div>
 			<div class="col-gallery">
-				<img class="img-gallery" src={image5.src} alt="">
-				<img class="img-gallery" src={image2.src} alt="">
-				<img class="img-gallery" src={image1.src} alt="">
+				<img class="img-gallery" src={image5.src} alt="Tatuaje de brazo completo hombre con dientes y ojos" loading="lazy">
+				<img class="img-gallery" src={image2.src} alt="Tatuaje neotribal mujer" loading="lazy">
+				<img class="img-gallery" src={image1.src} alt="Tatuaje de una chica con la cara partida a la mitad con dientes" loading="lazy">
 			</div>
 			<div class="col-gallery">
-				<img class="img-gallery" src={image4.src} alt="">
-				<img class="img-gallery" src={image6.src} alt="">
-				<img class="img-gallery" src={image3.src} alt="">
+				<img class="img-gallery" src={image4.src} alt="Tatuaje del antebrazo hombre pinchos sobre negro" loading="lazy">
+				<img class="img-gallery" src={image6.src} alt="Tatuaje pierna hombre, cara mujer esoterico" loading="lazy">
+				<img class="img-gallery" src={image3.src} alt="Tatuaje chica demonio sobre neotribal" loading="lazy">
 			</div>
 			<div class="cont-btn-gallery">
 				<p class="sub-btn-subtitle">Ver todos los</p>
