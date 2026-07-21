@@ -23,16 +23,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="robots" content="index, follow" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<title>Daarkling Tattoo</title>
 		<meta name="title" content="Daarkling Tattoo - Barcelona" />
 		<meta name="description" content="Tattoo Barcelona, desde tatuajes pequeños a piezas grandes. Soy Daarkling Tattoo, hago tatuajes personalizados y diseños únicos para las mentes más atrevidas. Blackwork, Fineline, Botanical, Neotribal, Tribal, Dark Ornamental">
 		<!-- Pendiente de modificar las keywords -->
 		<meta name="keywords" content="tatuadora blackwork barcelona, tatuajes blackwork españa, daarkling tattoo, estudio tatuajes barcelona, blackwork tattoo artist" />
 
-		<!-- Open Graph / Facebook / WhatsApp / Instagram -->
+        <!-- Open Graph / Facebook / WhatsApp / Instagram -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content={Astro.url} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content="Daarkling Tattoo - Barcelona" />
+        <meta property="og:description" content="Tattoo Barcelona, desde tatuajes pequeños a piezas grandes. Soy Daarkling Tattoo, hago tatuajes personalizados y diseños únicos para las mentes más atrevidas. Blackwork, Fineline, Botanical, Neotribal, Tribal, Dark Ornamental"/>
         <meta property="og:image" content={new URL(image, Astro.url)} />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:site_name" content="Daarkling Tattoo" />
@@ -40,8 +41,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <!-- Twitter / X -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={Astro.url} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:title" content="Daarkling Tattoo - Barcelona" />
+        <meta name="twitter:description" content="Tattoo Barcelona, desde tatuajes pequeños a piezas grandes. Soy Daarkling Tattoo, hago tatuajes personalizados y diseños únicos para las mentes más atrevidas. Blackwork, Fineline, Botanical, Neotribal, Tribal, Dark Ornamental" />
         <meta name="twitter:image" content={new URL(image, Astro.url)} />
 	</head>
 	<body>
