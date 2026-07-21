@@ -221,7 +221,7 @@ summary {
   width: 80vw;
   background-color: white;
   color: black;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.2em;
 }
 /* Footer */
@@ -408,6 +408,7 @@ summary {
     border-left: solid 1px white;
     color: black;
     font-weight: 500;
+    font-size: 1.2em;
   }
   .last-ul {
     padding: 20px 30px;
